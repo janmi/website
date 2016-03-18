@@ -1,0 +1,69 @@
+/* 
+* @Author: anchen
+* @Date:   2016-03-15 16:15:12
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-03-15 17:43:14
+*/
+
+'use strict';
+var path = require('path')
+var webpack = require('webpack')
+
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+    /*
+      配置入口文件，可以设置多个入口文件
+     */
+    entry: { 
+      app: '../src/app.js'
+    },
+    /*
+      设置配置输出
+     */
+    output: {
+      path: path.join(__dirname, 'dist'), // 输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
+      publicPath: './dist/',
+      fileName: './assets/js/[name].js',
+      chunkFilename: './assets/js/[id].chunk.js'
+    },
+    module: {
+      loaders: [{
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      },{
+        test: /\.less$/,  // 配置less的抽取器、加载器。中间!有必要解释一下，
+        // 根据从右到左的顺序依次调用less、css加载器，前一个的输出是后一个的输入
+        loader: ExtractTextPlugin.extract('css!less')
+      },{
+        test: /\.html$/,
+        loader: 'html?attrs=img:src img:data-src'
+      },{
+        test: /\.(png|jpg|jpeg|gif)$/,
+        loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
+      }]
+    },
+    plugins: [
+      new ExtractTextPlugin('assets/css/[name].css'),
+      new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
+            //favicon: './src/img/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
+            filename: '../index.html', //生成的html存放路径，相对于path
+            template: '../index.html', //html模板路径
+            inject: 'body', //js插入的位置，true/'head'/'body'/false
+            hash: true, //为静态资源生成hash值
+            chunks: ['index'],//需要引入的chunk，不配置就会引入所有页面的资源
+            minify: { //压缩HTML文件    
+                removeComments: true, //移除HTML中的注释
+                collapseWhitespace: false //删除空白符与换行符
+            }
+        })
+    ],
+    devServer: {
+      contentBase: './',
+      host: 'localhost',
+      port: 6666, //默认8080
+      inline: true, //可以监控js变化
+      hot: true, //热启动
+    }
+}
