@@ -28,7 +28,7 @@
 
 <template>
  <div class="m-warp" transition="expand">
-    <router-view></router-view> 
+    <router-view></router-view>
     <div class="m-nav">
       <a v-link="{name: 'list'}">列表页</a>
       <a v-link="{name: 'user'}">用户中心</a>
@@ -43,9 +43,6 @@
           return {
               msg: 'Welcome to your Vue.js app'
           }
-      },
-      components: {
-        'nvList': require('./views/list.vue')
       }
   }
 </script>

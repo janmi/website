@@ -17,22 +17,27 @@ var router = new router({
 router.map({
     '/list': {
       name: 'list',
-      component: require('./views/list.vue')
+      component: function(resolve){
+        require(['./views/list.vue'], resolve)
+      }
     },
     '/detail': {
       name: 'detail',
-      component: require('./views/detail.vue')
+      component: function(resolve){  
+        require(['./views/detail.vue'], resolve) // 异步加载模块
+      }
     },
     '/user': {
       name: 'user',
       component: require('./views/user.vue')
     }
 })
-
+  
 //默认/重定向到user页
 router.redirect({
     '/':"/user"
 })
+
 
 //启动路由器
 router.start(app, "app");
