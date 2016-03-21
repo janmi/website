@@ -8,14 +8,16 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 // whether to generate source map for production files.
 // disabling this can speed up the build.
 var SOURCE_MAP = true
+var debug = process.env.NODE_ENV !== 'production';
 
 module.exports = merge(baseConfig, {
   devtool: SOURCE_MAP ? '#source-map' : false,
   output: {
     // naming output files with hashes for better caching.
     // dist/index.html will be auto-generated with correct URLs.
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[id].[chunkhash].js'
+    publicPath: debug ? '/dist/' : 'http://cdn.site.com/', //配置静态文件域名
+    filename: 'js/[name].[chunkhash].js',
+    chunkFilename: 'js/[id].[chunkhash].js'
   },
   vue: {
     loaders: cssLoaders({
@@ -37,7 +39,7 @@ module.exports = merge(baseConfig, {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     // extract css into its own file
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('css/[name].[contenthash].css'),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin

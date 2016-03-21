@@ -1,5 +1,5 @@
 <style lang="less">
-  @import '../static/less/common_mobile.less';
+  @import './assets/less/common_mobile.less';
   body{
     background-color: #e2e2e2;
   }

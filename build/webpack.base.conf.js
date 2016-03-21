@@ -6,7 +6,7 @@ module.exports = {
     app: './src/app.js'
   },
   output: {
-    path: path.resolve(__dirname, '../dist/static'),
+    path: path.resolve(__dirname, '../dist/static/'),
     publicPath: '/static/',
     filename: '[name].js'
   },
@@ -60,7 +60,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: '[name].[ext]?[hash:7]'
+          name: './img/[name].[ext]?[hash:7]'
         }
       }
     ]
