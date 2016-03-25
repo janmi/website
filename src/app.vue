@@ -1,38 +1,50 @@
 <style lang="less">
   @import './assets/less/common_mobile.less';
-  body{
-    background-color: #e2e2e2;
-  }
-  .bg{
-    width: 200px;
-    height: 200px;
-    background:rgba(0,0,0,0.1) url(assets/img/4.jpg);
-    color:#fff;
+  @import './assets/less/icon.less';
+  @import url(./assets/less/module.less);    
+
+  .m-warp{
+    padding-bottom: 2rem;
   }
   .m-nav{
     position: fixed;
     left: 0;
     bottom: 0;
     display: flex;
-    width: 100%;
-    height:50px;
     justify-content:center;
     align-items:center;
-    background-color: #999;
-    a{
+    width: 100%;
+    height:1.2rem;
+    border-top:1px solid #d9d9d9;
+    background-color: rgba(247,247,247,.8);
+    .m-nav-item{
       flex:1;
       text-align: center;
+      color:#5f646e;
+      .px2px(font-size, 24);
+      .icon-font{
+        display:block;
+        .px2px(font-size, 36);
+      }
     }
   }
 </style>
 <template>
  <div class="m-warp" transition="expand">
-    <div class="bg"></div>
     <router-view></router-view>
-    <div class="m-nav"> 
-      <a v-link="{name: 'list'}">列表页</a>
-      <a v-link="{name: 'user'}">用户中心</a>
-      <a v-link="{name: 'detail'}">详情页</a>
+    <div class="m-nav">
+      <a class="m-nav-item" v-link="{name: 'list'}">
+        <span class="icon-font icon-home"></span>
+        首页
+      </a>
+      <a class="m-nav-item" v-link="{name: 'user'}">
+        <span class="icon-font icon-cart"></span>
+        购物车
+      </a>
+      <a class="m-nav-item" v-link="{name: 'detail'}">
+        <span class="icon-font icon-user"></span>
+        用户中心
+      </a>
     </div>
   </div>
 </template>
