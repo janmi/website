@@ -7,15 +7,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // whether to generate source map for production files.
 // disabling this can speed up the build.
-var SOURCE_MAP = true
+var SOURCE_MAP = true;
+// process.env.NODE_ENV = "dev";
 var debug = process.env.NODE_ENV !== 'production';
+var CDN = 'http://cdn.site.com/'; //配置静态文件域名
 
 module.exports = merge(baseConfig, {
   devtool: SOURCE_MAP ? '#source-map' : false,
   output: {
     // naming output files with hashes for better caching.
     // dist/index.html will be auto-generated with correct URLs.
-    publicPath: debug ? '/dist/' : 'http://cdn.site.com/', //配置静态文件域名
+    publicPath: debug ? '../dist/static/' : CDN, 
     filename: 'js/[name].[chunkhash].js',
     chunkFilename: 'js/[id].[chunkhash].js'
   },

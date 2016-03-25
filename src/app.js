@@ -3,11 +3,9 @@ var router = require('vue-router')
 var index = require('./app.vue');
 Vue.use(router);
 
+// 模仿淘宝开发一个app、主要功能首页、商品详情页、用户中心、订单列表、添加地址、购物车功能（使用订阅发布模式开发）
 
 var app = Vue.extend(index)
-
-// 全局注册组件 
-// Vue.component('app', app); 
 
 var router = new router({
   history:false,

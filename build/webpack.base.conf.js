@@ -60,7 +60,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: './img/[name].[ext]?[hash:7]'
+          name: 'img/[name].[hash:7].[ext]' //可配置打包路径
         }
       }
     ]

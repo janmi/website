@@ -6,7 +6,7 @@
   .bg{
     width: 200px;
     height: 200px;
-    background:rgba(0,0,0,0.1) url(./assets/img/4.jpg);
+    background:rgba(0,0,0,0.1) url(assets/img/4.jpg);
     color:#fff;
   }
   .m-nav{
@@ -25,11 +25,11 @@
     }
   }
 </style>
-
 <template>
  <div class="m-warp" transition="expand">
+    <div class="bg"></div>
     <router-view></router-view>
-    <div class="m-nav">
+    <div class="m-nav"> 
       <a v-link="{name: 'list'}">列表页</a>
       <a v-link="{name: 'user'}">用户中心</a>
       <a v-link="{name: 'detail'}">详情页</a>
