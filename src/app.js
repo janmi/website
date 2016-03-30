@@ -13,10 +13,10 @@ var router = new router({
 })
 
 router.map({
-    '/list': {
-      name: 'list',
+    '/index': {
+      name: 'index',
       component: function(resolve){
-        require(['./views/list.vue'], resolve)
+        require(['./views/index.vue'], resolve)
       }
     },
     '/detail': {
@@ -36,9 +36,22 @@ router.redirect({
     '/':"/user"
 })
 
+//注册路由切换前
+router.beforeEach(function(transition){
+    var toPath = transition.to.path;
+    //var data = JSON.parse(localStorage.getItem('shopData'));
+    // document.body.scrollTop = 0
+    // if (toPath.indexOf('login') > -1) {
+    //     router.app.isShow = false;
+    // }else{
+    //     router.app.isShow = true;
+    // }
+    transition.next()
+})
 
 //启动路由器
 router.start(app, "app");
+
 
 //注册路由切换后
 router.afterEach(function (transition) {
