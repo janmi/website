@@ -39,13 +39,12 @@ router.redirect({
 //注册路由切换前
 router.beforeEach(function(transition){
     var toPath = transition.to.path;
-    //var data = JSON.parse(localStorage.getItem('shopData'));
     // document.body.scrollTop = 0
-    // if (toPath.indexOf('login') > -1) {
-    //     router.app.isShow = false;
-    // }else{
-    //     router.app.isShow = true;
-    // }
+    if (toPath.indexOf('detail') > -1) {
+        router.app.isShow = false;
+    }else{
+        router.app.isShow = true;
+    }
     transition.next()
 })
 

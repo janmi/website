@@ -17,6 +17,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
+    z-index: 1000;
     display: flex;
     justify-content:center;
     align-items:center;
@@ -32,6 +33,7 @@
       .px2px(font-size, 24);
       .icon-font{
         display:block;
+        margin-bottom: -0.093333rem;
         .px2px(font-size, 34);
       }
     }
@@ -45,7 +47,7 @@
     <div class="m-grid">
       <router-view></router-view>
     </div>
-    <div class="m-nav">
+    <div class="m-nav" v-show="isShow">
       <a class="m-nav-item" v-link="{name: 'index'}">
         <span class="icon-font icon-home"></span>
         首页
@@ -66,7 +68,7 @@
   module.exports = {
       data:function() {
           return {
-              msg: 'Welcome to your Vue.js app'
+            isShow: true
           }
       },
       ready:function(){
