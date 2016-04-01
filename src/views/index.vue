@@ -2,7 +2,6 @@
     <my-banner v-bind:data-banner="banners"></my-banner>
     <my-type></my-type>
     <my-list v-bind:data-list="goods"></my-list>
-    <p>{{ msg }}</p>
 </template>
 
 <script>

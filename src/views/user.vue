@@ -46,7 +46,7 @@
       width:1.333333rem;
       height:1.333333rem;
       border-radius: 50%;
-      border: 2px solid #fff;
+      border: 0.026667rem solid #fff;
     }
   }
 
@@ -108,13 +108,14 @@
         left:50%;
         margin-left: .14rem;
         padding:0.04rem;
-        width:0.35rem;
-        height:0.35rem;
-        line-height: .38rem;
+        width:0.42rem;
+        height:0.42rem;
+        line-height: .42rem;
         border: 0.026667rem solid #ff5000;
         background-color: #ff5000;
         border-radius: 50%;
         color:#fff;
+        text-align: center;
         .px2px(font-size, 24);
         font-style:normal;
       }
