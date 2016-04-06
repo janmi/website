@@ -13,10 +13,10 @@ var router = new router({
 })
 
 router.map({
-    '/list': {
-      name: 'list',
+    '/index': {
+      name: 'index',
       component: function(resolve){
-        require(['./views/list.vue'], resolve)
+        require(['./views/index.vue'], resolve)
       }
     },
     '/detail': {
@@ -28,6 +28,13 @@ router.map({
     '/user': {
       name: 'user',
       component: require('./views/user.vue')
+    },
+    '/cart': {
+      name: 'cart',
+      component: require('./views/cart.vue')
+    },
+    '*': {
+      component: require('./views/404.vue')
     }
 })
   
@@ -36,9 +43,21 @@ router.redirect({
     '/':"/user"
 })
 
+//注册路由切换前
+router.beforeEach(function(transition){
+    var toPath = transition.to.path;
+    // document.body.scrollTop = 0
+    if (toPath.indexOf('detail') > -1) {
+        router.app.isShow = false;
+    }else{
+        router.app.isShow = true;
+    }
+    transition.next()
+})
 
 //启动路由器
 router.start(app, "app");
+
 
 //注册路由切换后
 router.afterEach(function (transition) {
