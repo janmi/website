@@ -1,0 +1,809 @@
+//宋体
+@font-SongTi : ~'"\5B8B\4F53"';
+//黑体
+@font-HeiTi : ~'"\9ED1\4F53"';
+//雅黑
+@font-YaHei : ~'"\5FAE\8F6F\96C5\9ED1"';
+
+
+//文本溢出隐藏并显示省略号
+.elps(){text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+
+//文本溢出隐藏并显示省略号多行
+.elps-wrap(){
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;//-webkit-box为旧的属性值，2012年最新的标准草案为flex，如果把值该为flex，将不支持多行省略号。
+    -webkit-line-clamp: 2;//webkit支持此属性，并且是一个不规范的属性，没有出现在css规范的草案中。必须结合display: -webkit-box和-webkit-box-orient: vertical;属性一起使用
+    -webkit-box-orient: vertical;
+}
+
+//让低版本ie支持inline-block
+.inBk(){ display:inline-block; *display:inline; *zoom:1;} 
+//让文本换行
+.bw(){word-wrap:break-word;word-break:break-all;}
+
+.font-family(@f) when (@f="宋体"){
+  font-family: @font-SongTi;
+}
+.font-family(@f) when (@f="黑体"){
+  font-family: @font-HeiTi;
+}
+.font-family(@f) when (@f="雅黑"){
+  font-family: @font-YaHei;
+}
+.font-family(){
+  font-family: Tahoma, Helvetica, Arial, @font-SongTi, sans-serif;
+}
+
+
+//三角形-上
+.triangle-top(@width,@height,@bgColor){
+    @_w: @width/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: transparent transparent @bgColor transparent;
+    border-style: dashed dashed solid dashed;
+    border-width: ~'0 @{_w}px @{height}px @{_w}px';
+}
+
+//三角形-上-rem
+.triangle-top-rem(@width,@height,@bgColor){
+    @_w: @width/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: transparent transparent @bgColor transparent;
+    border-style: dashed dashed solid dashed;
+    border-width: ~'0 @{_w}rem @{height}rem @{_w}rem';
+}
+
+//三角形-下
+.triangle-bottom(@width,@height,@bgColor){
+    @_w: @width/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: @bgColor transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+    border-width: ~'@{height}px @{_w}px 0 @{_w}px';
+}
+//三角形-左
+.triangle-left(@width,@height,@bgColor){
+    @_h: @height/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: transparent @bgColor transparent transparent;
+    border-style: dashed solid dashed dashed;
+    border-width: ~'@{_h}px @{width}px @{_h}px 0';
+}
+//三角形-右
+.triangle-right(@width,@height,@bgColor){
+    @_h: @height/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: transparent transparent transparent @bgColor;
+    border-style: dashed dashed dashed solid;
+    border-width: ~'@{_h}px 0 @{_h}px @{width}px';
+}
+.triangle-top-left(@width,@height,@bgColor){
+    @_w: @width/2;
+    @_h: @height/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: @bgColor transparent transparent @bgColor;
+    border-style: solid dashed dashed solid;
+    border-width: ~'@{_h}px @{_w}px @{_h}px @{_w}px';
+}
+.triangle-top-right(@width,@height,@bgColor){
+    @_w: @width/2;
+    @_h: @height/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: @bgColor @bgColor transparent transparent;
+    border-style: solid solid dashed dashed;
+    border-width: ~'@{_h}px @{_w}px @{_h}px @{_w}px';
+}
+.triangle-bottom-left(@width,@height,@bgColor){
+    @_w: @width/2;
+    @_h: @height/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: transparent transparent @bgColor @bgColor;
+    border-style: dashed dashed solid solid;
+    border-width: ~'@{_h}px @{_w}px @{_h}px @{_w}px';
+}
+.triangle-bottom-right(@width,@height,@bgColor){
+    @_w: @width/2;
+    @_h: @height/2;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    display:inline-block; *display:inline; *zoom:1;
+    border-color: transparent @bgColor @bgColor transparent;
+    border-style: dashed solid solid dashed;
+    border-width: ~'@{_h}px @{_w}px @{_h}px @{_w}px';
+}
+
+
+
+//##
+//# 未知图片居中
+//# @width  盒子宽
+//# @height 盒子高
+//##
+.image-center(@width, @height){
+    @_fontsize: round(@height * 0.873);
+    width: ~'@{width}px';
+    height: ~'@{height}px';
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    *display: block;//IE hack
+    *font: ~"@{_fontsize}px/1em Arial";
+
+    img{
+        max-height: ~'@{height}px';
+        max-width: ~'@{width}px';
+        vertical-align: middle;
+    }
+}
+//##
+//# 未知图片居中 - 盒子是正方形情况下只需要传一参数
+//# @size
+//##
+.image-center(@size){
+    @_fontsize: round(@size * 0.873);
+    width: ~'@{size}px';
+    height: ~'@{size}px';
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    *display: block;//IE hack
+    *font: ~"@{_fontsize}px/1em Arial";
+
+    img{
+        max-height: ~'@{size}px';
+        max-width: ~'@{size}px';
+        vertical-align: middle;
+    }
+}
+
+//px2em
+.vl-width-px2em(@pixel: 16){
+    @per: (@pixel/16);
+    width: ~"@{per}em";
+}
+.vl-font-px2em(@pixel: 12){
+    @per: (@pixel/16);
+    font-size: ~"@{per}em";
+}
+
+
+//##
+//# background-clip 背景覆盖的位置
+//# @params  [ border-box || padding-box || content-box]
+//##
+.background-clip(@background-clip: border-box){
+       -moz-background-clip: @background-clip;
+    -webkit-background-clip: @background-clip;
+            background-clip: @background-clip;
+}
+
+//##
+//# background-origin 背景开始的位置
+//# @params [padding-box | border-box | content-box][, [border-box | padding-box | content-box]]*
+//##
+.background-origin(@background-origin: padding-box){
+       -moz-background-origin: @background-origin;
+    -webkit-background-origin: @background-origin;
+            background-origin: @background-origin;
+}
+
+//##
+//# 背景透明
+//##
+.background-rgba(@red, @green, @blue, @alpha:1){
+    @filtercolor:`(_f = function(d){ var v = (parseInt(d)|0).toString(16);return v.length<2 ? "0"+v : v;},'#'+_f(@{alpha}*255) + _f(@{red}) + _f(@{green})+ _f(@{blue}))`;
+    background-color: ~'rgba(@{red},@{green},@{blue},@{alpha})';
+    -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}');
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}'); 
+}
+
+//##
+//# background-size 背景尺寸
+//# @params [ [ <length> | <percentage> | auto ]{1,2} | cover | contain ]#
+//# @author 飞长 <veryued@gmail.com>
+//##
+.background-size(@background-size: auto){
+       -moz-background-size: @background-size;
+    -webkit-background-size: @background-size;
+         -o-background-size: @background-size;
+            background-size: @background-size;
+}
+
+//##
+//# 自上而下的背景渐变色
+//##
+.linear-gradient (@color1; @color2) {
+    filter: ~'progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="@{color1}", endColorstr="@{color1}")';
+    background-image: -webkit-linear-gradient(top,@color1, @color2);
+    background-image: -moz-linear-gradient(top,@color1, @color2);
+    background-image: -ms-linear-gradient(top,@color1  0,@color2 100%);
+    background-image: -o-linear-gradient(top,@color1, @color2);
+    background-image: linear-gradient(top,@color1, @color2);
+}
+
+//##
+//# 禁用渐变
+//##
+.linear-gradientDisable () {
+    background-image: none;
+// 　　filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);  /* 禁用渐变 */
+}
+
+//##
+//# 圆角
+//##
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+//单角
+.border-top-left-radius(@radius: 5px) {
+    -webkit-border-top-left-radius: @radius;
+        -moz-border-radius-topleft: @radius;
+            border-top-left-radius: @radius;
+}
+.border-top-right-radius(@radius: 5px) {
+    -webkit-border-top-right-radius: @radius;
+        -moz-border-radius-topright: @radius;
+            border-top-right-radius: @radius;
+}
+.border-bottom-right-radius(@radius: 5px) {
+    -webkit-border-bottom-right-radius: @radius;
+        -moz-border-radius-bottomright: @radius;
+            border-bottom-right-radius: @radius;
+}
+.border-bottom-left-radius(@radius: 5px) {
+    -webkit-border-bottom-left-radius: @radius;
+        -moz-border-radius-bottomleft: @radius;
+            border-bottom-left-radius: @radius;
+}
+//单边
+.border-top-radius(@radius: 5px) {
+    .border-top-right-radius(@radius);
+    .border-top-left-radius(@radius);
+}
+.border-right-radius(@radius: 5px) {
+    .border-top-right-radius(@radius);
+    .border-bottom-right-radius(@radius);
+}
+.border-bottom-radius(@radius: 5px) {
+    .border-bottom-right-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+.border-left-radius(@radius: 5px) {
+    .border-top-left-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+
+//##
+//# 阴影
+//# @params none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
+//#          none | [内映射? && [横向平移 纵向平移 模糊? 扩散? 颜色?]]#
+//##
+.box-shadow(@shadow: 5px 5px 10px #cccccc) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+//##
+//# box-sizing 盒模型计算方式
+//# @params content-box padding-box border-box
+//##
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+//##
+//# column-count
+//# @type {[type]}
+//##
+.content-columns(@columnCount, @columnGap: @gridGutterWidth) {
+    -webkit-column-count: @columnCount;
+       -moz-column-count: @columnCount;
+            column-count: @columnCount;
+      -webkit-column-gap: @columnGap;
+         -moz-column-gap: @columnGap;
+              column-gap: @columnGap;
+}
+
+//##
+//# font-face 自定义字体
+//# @params    @path: 字体路径; @font-name: 字体名字; 需要同时存在eot woff ttf svg
+//##
+.font-face(@path, @font-name){
+    @font-face{
+        font-family: @font-name;
+        src: url('@path/@{font-name}.eot'); /* IE9 Compat Modes */
+        src: url('@path/@{font-name}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('@path/@{font-name}.woff') format('woff'), /* Modern Browsers */
+             url('@path/@{font-name}.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('@path/@{font-name}.svg#svgFontName') format('svg'); /* Legacy iOS */
+    }
+}
+
+//##
+//# 元素透明度
+//##
+.opacity(@opacity: 80) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+
+//##
+//# resize
+//# @params    horizontal, vertical, both
+//##
+.resizable(@direction) {
+    resize: @direction;
+    overflow: auto; // Safari fix
+}
+
+//##
+//# transformation 
+//# @params  
+//##
+//# transform: none
+//# transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0)
+//# transform: translate(12px, 50%)
+//# transform: translateX(2em)
+//# transform: translateY(3in)
+//# transform: scale(2, 0.5)
+//# transform: scaleX(2)
+//# transform: scaleY(0.5)
+//# transform: rotate(0.5turn)
+//# transform: skewX(30deg)
+//# transform: skewY(1.07rad)
+//# transform: matrix3d(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)
+//# transform: translate3d(12px, 50%, 3em)
+//# transform: translateZ(2px)
+//# transform: scale3d(2.5, 1.2, 0.3)
+//# transform: scaleZ(0.3)
+//# transform: rotate3d(1, 2.0, 3.0, 10deg)
+//# transform: rotateX(10deg)
+//# transform: rotateY(10deg)
+//# transform: rotateZ(10deg)
+//# transform: perspective(17px)
+//# transform: translateX(10px) rotate(10deg) translateY(5px)
+//##
+// 旋转
+.rotate(@degress) {
+    -webkit-transform: scale(@degress);
+     -moz-transform: scale(@degress);
+      -ms-transform: scale(@degress);
+       -o-transform: scale(@degress);
+          transform: scale(@degress);
+}
+.rotate3d(@x, @y, @z, @degress){
+    -webkit-transform: rotate3d(@x, @y, @z, @degress);
+     -moz-transform: rotate3d(@x, @y, @z, @degress);
+      -ms-transform: rotate3d(@x, @y, @z, @degress);
+       -o-transform: rotate3d(@x, @y, @z, @degress);
+          transform: rotate3d(@x, @y, @z, @degress);
+}
+.rotateX(@degress){
+    -webkit-transform: rotateX(@degrees);
+     -moz-transform: rotateX(@degrees);
+      -ms-transform: rotateX(@degrees);
+       -o-transform: rotateX(@degrees);
+          transform: rotateX(@degrees);
+}
+.rotateY(@degress){
+    -webkit-transform: rotateY(@degrees);
+     -moz-transform: rotateY(@degrees);
+      -ms-transform: rotateY(@degrees);
+       -o-transform: rotateY(@degrees);
+          transform: rotateY(@degrees);
+}
+.rotateZ(@degress){
+    -webkit-transform: rotateZ(@degrees);
+     -moz-transform: rotateZ(@degrees);
+      -ms-transform: rotateZ(@degrees);
+       -o-transform: rotateZ(@degrees);
+          transform: rotateZ(@degrees);
+}
+//缩放
+.scale(@ratio) {
+    -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+.scaleX(@ratio) {
+    -webkit-transform: scaleX(@ratio);
+     -moz-transform: scaleX(@ratio);
+      -ms-transform: scaleX(@ratio);
+       -o-transform: scaleX(@ratio);
+          transform: scaleX(@ratio);
+}
+.scaleY(@ratio) {
+    -webkit-transform: scaleY(@ratio);
+     -moz-transform: scaleY(@ratio);
+      -ms-transform: scaleY(@ratio);
+       -o-transform: scaleY(@ratio);
+          transform: scaleY(@ratio);
+}
+//重定位元素
+.translate(@x, @y) {
+    -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}
+.translate3d(@x, @y, @z) {
+    -webkit-transform: translate3d(@x, @y, @z);
+     -moz-transform: translate3d(@x, @y, @z);
+       -o-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
+}
+.translateX(@x){
+    -webkit-transform: translateX(@x);
+     -moz-transform: translateX(@x);
+      -ms-transform: translateX(@x);
+       -o-transform: translateX(@x);
+          transform: translateX(@x);
+}
+.translateY(@y){
+    -webkit-transform: translateY(@y);
+     -moz-transform: translateY(@y);
+      -ms-transform: translateY(@y);
+       -o-transform: translateY(@y);
+          transform: translateY(@y);
+}
+.translateZ(@z){
+    -webkit-transform: translateZ(@z);
+     -moz-transform: translateZ(@z);
+      -ms-transform: translateZ(@z);
+       -o-transform: translateZ(@z);
+          transform: translateZ(@z);
+}
+//倾斜
+.skew(@x, @y) {
+    -webkit-transform: skew(@x, @y);
+     -moz-transform: skew(@x, @y);
+      -ms-transform: skewX(@x) skewY(@y); 
+       -o-transform: skew(@x, @y);
+          transform: skew(@x, @y);
+    -webkit-backface-visibility: hidden;
+}
+.skewX(@x) {
+    -webkit-transform: skewX(@x);
+     -moz-transform: skewX(@x);
+      -ms-transform: skewX(@x);
+       -o-transform: skewX(@x);
+          transform: skewX(@x);
+    -webkit-backface-visibility: hidden;
+    //Webkit gives a pixelated edge. This can be resolved by adding the following line to the mixin. -webkit-backface-visibility: hidden;
+}
+.skewY(@y) {
+    -webkit-transform: skewY(@y);
+     -moz-transform: skewY(@y);
+      -ms-transform: skewY(@y); 
+       -o-transform: skewY(@y);
+          transform: skewY(@y);
+    -webkit-backface-visibility: hidden;
+}
+
+//##
+//# transition
+//# 详细可以查看 http://www.w3.org/TR/css3-transitions/
+//##
+.transition(@transition) {
+    -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+//**
+//# 延迟时间
+//# @type {time} 如0s
+//##
+.transition-delay(@transition-delay: 0s) {
+  -webkit-transition-delay: @transition-delay;
+     -moz-transition-delay: @transition-delay;
+       -o-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+
+//##
+//# 持续时间
+//# @type {time} 如0s
+//##
+.transition-duration(@transition-duration: 0s){
+    -webkit-transition-delay: @transition-duration;
+     -moz-transition-delay: @transition-duration;
+       -o-transition-delay: @transition-duration;
+          transition-delay: @transition-duration;
+}
+
+//##
+//# 需要transition的属性
+//# @type: {css-property}
+//##
+.transition-property(@transition-property){
+  -webkit-transition-delay: @transition-property;
+     -moz-transition-delay: @transition-property;
+       -o-transition-delay: @transition-property;
+          transition-delay: @transition-property;
+}
+
+//**
+//# 时间函数
+//# @param  {
+//#         [ ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | 
+//#         steps(<integer>[, [ start | end ] ]?) | cubic-bezier(<number>, <number>, <number>, <number>) ] 
+//#         [, [ ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | 
+//#         steps(<number>[, [ start | end ] ]?) | cubic-bezier(<number>, <number>, <number>, <number>) ] ]*
+//# } 
+//# @transition-timing: ease          [description]
+//##
+.transition-timing-function(@transition-timing: ease){
+    -webkit-transition-delay: @transition-timing;
+     -moz-transition-delay: @transition-timing;
+       -o-transition-delay: @transition-timing;
+          transition-delay: @transition-timing;
+}
+
+//##
+//# user-select
+//# @params    none | text | all | element
+//##
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+
+//============= 去色(不兼容低版本Safari、Opera和某些firefox), 一般用于哀悼日)
+.Grayscale() { 
+    -webkit-filter: grayscale(100%);   
+    -webkit-filter: grayscale(1);    /* Chrome 19+ & Safari 6+ */
+       -moz-filter: grayscale(100%); 
+        -ms-filter: grayscale(100%); 
+         -o-filter: grayscale(100%); 
+            filter: grayscale(100%);
+
+            /* firefox 3.5+，慎用！存在性能问题 */ 
+            filter: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale');           
+            filter: gray; /* IE6~9 */ 
+} 
+
+
+//=============  logo引入 最佳实践
+.Logo (@w, @h, @url) {
+    display: block;
+    width: @w; height:@h; *height:0; *padding-top:@h; overflow: hidden;
+    *background:url(@url) no-repeat 0 0; 
+    &:before {
+        content: url(@url);
+        //display: inline-block; 配合 margin 作 spire 定位      
+    }
+}
+
+
+.Max-height(@h, @pd: 0) {
+
+    @Hnum: unit(@h);
+    @PDnum: unit(@pd);
+
+    max-height: @h;
+    _height:~"expression( (this.clientHeight-@{PDnum})>@{Hnum}? @{Hnum} : (this.clientHeight-@{PDnum}) )";
+    _overflow: hidden;
+    _zoom: 1;
+
+    // clientHeight = height + padding;
+    // offsetHeight = height + padding+border;
+}
+.Max-width(@h, @pd: 0) {
+
+    @Hnum: unit(@h);
+    @PDnum: unit(@pd);
+
+    max-width: @h;
+    _width:~"expression( (this.clientWidth-@{PDnum})>@{Hnum}? @{Hnum} : (this.clientWidth-@{PDnum}) )";
+    _overflow: hidden;
+    _zoom: 1;
+
+}
+.Min-height(@h, @pd: 0) {
+
+    @Hnum: unit(@h);
+    @PDnum: unit(@pd);
+
+    min-height: @h;
+    _height:~"expression( (this.clientHeight-@{PDnum})<@{Hnum}? @{Hnum} : (this.clientHeight-@{PDnum}) )";
+    _overflow: hidden;
+    _zoom: 1;
+
+}
+.Min-width(@h, @pd: 0) {
+
+    @Hnum: unit(@h);
+    @PDnum: unit(@pd);
+
+    min-width: @h;
+    _width:~"expression( (this.clientWidth-@{PDnum})<@{Hnum}? @{Hnum} : (this.clientWidth-@{PDnum}) )";
+    _overflow: hidden;
+    _zoom: 1;
+
+}
+
+
+//##
+//# 双栏自适应宽度的布局
+//##
+.grid-left(@w){
+  &-main{float:left;width:100%;}
+  &-main-wrap{margin-left:@w;}
+  &-sub{width:@w;float:left;margin-left:-100%;}
+}
+.grid-right(@w){
+  &-main{float:left;width:100%;}
+  &-main-wrap{margin-right:@w;}
+  &-sub{width:@w;float:left;margin-left:-100%;}
+}
+
+//##
+//# 工具集
+//# @w: 1000 表示建立一个宽度为1000px的 .w1000的样式
+//##
+.tool(@width: 1000){
+    .w@{width}{width: ~'@{width}px'; margin: 0 auto; }
+    .floatL{float:left;display: inline;}.floatR{float:right;display: inline;}
+    .clearfix{.clearfix();}
+    .elps{.elps();}
+    .inBk{.inBk();}
+}
+
+//##
+//#文本垂直居中
+//#不兼容ie6
+//##
+.txt-apeak(){
+  display:table-cell;
+  vertical-align: middle;
+}
+
+//##
+//#水平垂直居中
+//##
+//
+.txt-level-apeak(@w,@h){
+  position: absolute;
+  top: 50%;
+  left:50%;
+  margin-left: -(@w/2);
+  margin-top: -(@h/2);
+}
+
+
+//##
+//#0.5像素边框
+//##
+.border-half-bottom(@color){
+  content:"";
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  border-bottom: 1px solid @color;
+  transform:scaleY(.5);
+  transform-origin:0 0;
+}
+
+.border-half-top(@color){
+  content:"";
+  position: absolute;
+  top:0px;
+  left:0px;
+  border-bottom: 1px solid @color;
+  transform:scaleY(.5);
+  transform-origin:0 0;
+}
+
+.border-half-left(@color){
+  content:"";
+  position: absolute;
+  top:0px;
+  left:0px;
+  border-left: 1px solid @color;
+  transform:scaleX(.5);
+  transform-origin:0 0;
+}
+
+.border-half-right(@color){
+  content:"";
+  position: absolute;
+  top:0px;
+  left:0px;
+  border-right: 1px solid @color;
+  transform:scaleX(.5);
+  transform-origin:0 0;
+}
+
+.px2px(@name, @px){
+    @{name}: round(@px / 2) * 1px;
+    [data-dpr="2"] & {
+        @{name}: @px * 1px;
+    }
+    // for mx3
+    [data-dpr="2.5"] & {
+        @{name}: round(@px * 2.5 / 2) * 1px;
+    }
+    // for 小米note
+    [data-dpr="2.75"] & {
+        @{name}: round(@px * 2.75 / 2) * 1px;
+    }
+    [data-dpr="3"] & {
+        @{name}: round(@px / 2 * 3) * 1px
+    }
+    // for 三星note4
+    [data-dpr="4"] & {
+        @{name}: @px * 2px;
+    }
+}
+
+.bppx2px(@xpx, @ypx){
+
+    background-position: @xpx * 1px @ypx * 1px;
+
+    [data-dpr="1"] & {
+        background-position: round(@xpx / 2) * 1px round(@ypx / 2) * 1px;
+    }
+}
+
+.attrpx2px(@name, @px){
+
+    @{name}: @px * 1px;
+
+    [data-dpr="1"] & {
+        @{name}: round(@px / 2) * 1px;
+    }
+}

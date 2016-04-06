@@ -1,31 +1,54 @@
 /*===reset===*/
-html { -webkit-tap-highlight-color: transparent; height: 100%; min-width: 320px; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; text-size-adjust: none; overflow-scrolling: touch;  /*快速滚动和回弹，模拟原生app效果*/ }
+html {
+    -webkit-tap-highlight-color: transparent; //解决点击后出现阴影问题
+    height: 100%;
+    min-width: 320px;
+    text-size-adjust : none;//禁止横屏时，放大字体
+    overflow-scrolling: touch;/*快速滚动和回弹，模拟原生app效果*/
+}
+
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, iframe { margin: 0; padding: 0; }
-body { font-family:Tahoma,Arial,sans-self; line-height: 1.5; font-size: 12px; height: 100%; }
+
+body { font-family: tahoma, \5b8b\4f53, arial; line-height: 1.5; font-size: 12px; height: 100%; }
+
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
 fieldset, img { border: 0; }
+
 address, caption, cite, dfn, em, th, var { font-style: normal; font-weight: normal; }
+
 ol, ul { list-style: none; }
-a { text-decoration: none;}
-img{color: #333;} 
-a:hover { text-decoration: none; }
-a:visited{ color:#333;}
+
+a { text-decoration: none; }
+a:hover { text-decoration:none; }
+
 sup { vertical-align: text-top; }
+
 sub { vertical-align: text-bottom; }
+
 input, select, button { font: 100% tahoma, \5b8b\4f53, arial; vertical-align: baseline; *vertical-align: middle; }
+
 input[type=checkbox], input[type=radio] { vertical-align: middle; }
+
 textarea { overflow: auto; font: 100% tahoma, \5b8b\4f53, arial; }
+
 table { border-collapse: collapse; border-spacing: 0; }
 
 /*HTML5*/
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { display: block; margin: 0; padding: 0; }
+
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
 time, mark { display: inline; }
+
 mark { background-color: #ff0; color: #000; }
+
 audio:not([controls]) { display: none; height: 0; }
-input[type=password],input[type=text], input[type=reset], input[type=submit], select, button, textarea { -webkit-appearance: none; }
+
+input[type=text], input[type=reset],input[type=submit], select,button,textarea{-webkit-appearance: none;}//去掉ios系统内阴影
+
+
+//清除浮动
 .clearfix { *zoom: 1; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-
-
