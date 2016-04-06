@@ -28,6 +28,13 @@ router.map({
     '/user': {
       name: 'user',
       component: require('./views/user.vue')
+    },
+    '/cart': {
+      name: 'cart',
+      component: require('./views/cart.vue')
+    },
+    '*': {
+      component: require('./views/404.vue')
     }
 })
   

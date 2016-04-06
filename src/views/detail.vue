@@ -85,7 +85,7 @@
       <span class="goods-buy add-cart">加入购物车</span>
       <a href="#" class="goods-buy" title="">立即购买</a>
     </div>
-    <detail-rule></detail-rule>
+    <detail-rule v-show="isRule"></detail-rule>
   </div>
 </template>
 
@@ -93,7 +93,8 @@
    module.exports = {
     data:function() {
         return {
-            detail:'我是详情页'
+            detail:'我是详情页',
+            isRule:false
         }
     },
     components:{

@@ -52,7 +52,7 @@
         <span class="icon-font icon-home"></span>
         首页
       </a>
-      <a class="m-nav-item" v-link="{name: 'detail'}">
+      <a class="m-nav-item" v-link="{name: 'cart'}">
         <span class="icon-font icon-cart"></span>
         购物车
       </a>

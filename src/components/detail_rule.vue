@@ -42,6 +42,7 @@
         padding:0.266667rem;
         width:0.6rem;
         height:0.6rem;
+        line-height: 0.6rem;
         background-color: #e7e7e7;
         border: none;
         text-align: center;
@@ -103,6 +104,9 @@
     text-align: center;
     .px2px(font-size, 32);
   }
+  body{
+    overflow-y: hidden;
+  }
 </style>
 
 <template>
@@ -150,6 +154,6 @@
  
 <script>
   module.exports = {
-
+    porp:['dataRule']
   }
 </script>
