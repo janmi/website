@@ -1,5 +1,4 @@
 <style lang="less">
-  @import '../../node_modules/anima-carousel/src/carousel.less';
   .m-banner{
     position: relative;
     height:3.066667rem;
