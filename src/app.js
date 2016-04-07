@@ -1,9 +1,13 @@
 var Vue = require('vue')
 var router = require('vue-router')
 var index = require('./app.vue');
+var resource = require('vue-resource');
 Vue.use(router);
-
+Vue.use(resource);
 // 模仿淘宝开发一个app、主要功能首页、商品详情页、用户中心、订单列表、添加地址、购物车功能（使用订阅发布模式开发）
+Vue.http.options.root = 'http://192.168.10.22/website/'; //配置根目录
+Vue.http.options.emulateJSON = true;
+
 
 var app = Vue.extend(index)
 

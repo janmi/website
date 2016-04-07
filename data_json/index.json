@@ -1,0 +1,109 @@
+{
+  "status": true,
+  "message": "",
+  "bannerData": [
+    {
+      "id": "5705d94c1763a843990912f8",
+      "index": 0,
+      "picture": "http://placehold.it/1125x350",
+      "url": "#",
+      "tit": "Jocelyn"
+    },
+    {
+      "id": "5705d94c4c876b6052935461",
+      "index": 1,
+      "picture": "http://placehold.it/1125x350",
+      "url": "#",
+      "tit": "Aguirre"
+    },
+    {
+      "id": "5705d94ccae944fcdd1fed19",
+      "index": 2,
+      "picture": "http://placehold.it/1125x350",
+      "url": "#",
+      "tit": "Macias"
+    }
+  ],
+  "goodsData": [
+    {
+      "id": "5705d94c3471b35bc5fc5710",
+      "index": 0,
+      "picture": "http://placehold.it/640x640",
+      "url": 0,
+      "tit": "这是第条 0 商品数据;下面还有8 未读数据",
+      "price": "¥3247.00"
+    },
+    {
+      "id": "5705d94c3f10c9be1a4358d4",
+      "index": 1,
+      "picture": "http://placehold.it/640x640",
+      "url": 1,
+      "tit": "这是第条 1 商品数据;下面还有10 未读数据",
+      "price": "¥1248.86"
+    },
+    {
+      "id": "5705d94c18bb8a70c9620c60",
+      "index": 2,
+      "picture": "http://placehold.it/640x640",
+      "url": 2,
+      "tit": "这是第条 2 商品数据;下面还有7 未读数据",
+      "price": "¥3972.99"
+    },
+    {
+      "id": "5705d94c84ad2aca7e8ad00d",
+      "index": 3,
+      "picture": "http://placehold.it/640x640",
+      "url": 3,
+      "tit": "这是第条 3 商品数据;下面还有7 未读数据",
+      "price": "¥3371.27"
+    },
+    {
+      "id": "5705d94c28a84f541a12f953",
+      "index": 4,
+      "picture": "http://placehold.it/640x640",
+      "url": 4,
+      "tit": "这是第条 4 商品数据;下面还有6 未读数据",
+      "price": "¥1445.16"
+    },
+    {
+      "id": "5705d94cb3f7f26a74a88776",
+      "index": 5,
+      "picture": "http://placehold.it/640x640",
+      "url": 5,
+      "tit": "这是第条 5 商品数据;下面还有5 未读数据",
+      "price": "¥2037.97"
+    },
+    {
+      "id": "5705d94ca38b69ca1db39e0f",
+      "index": 6,
+      "picture": "http://placehold.it/640x640",
+      "url": 6,
+      "tit": "这是第条 6 商品数据;下面还有5 未读数据",
+      "price": "¥1266.63"
+    },
+    {
+      "id": "5705d94c4c6db7ecc4bb3f8d",
+      "index": 7,
+      "picture": "http://placehold.it/640x640",
+      "url": 7,
+      "tit": "这是第条 7 商品数据;下面还有10 未读数据",
+      "price": "¥1708.18"
+    },
+    {
+      "id": "5705d94c64181b00073b3ca1",
+      "index": 8,
+      "picture": "http://placehold.it/640x640",
+      "url": 8,
+      "tit": "这是第条 8 商品数据;下面还有6 未读数据",
+      "price": "¥790.53"
+    },
+    {
+      "id": "5705d94c91643f43cc38033b",
+      "index": 9,
+      "picture": "http://placehold.it/640x640",
+      "url": 9,
+      "tit": "这是第条 9 商品数据;下面还有5 未读数据",
+      "price": "¥2989.94"
+    }
+  ]
+}
