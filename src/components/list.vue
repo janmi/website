@@ -66,15 +66,15 @@
           <span>¥160.00</span>
         </a>
       </li>
-<!--       <template v-for="goods in dataList">
+      <!-- <template v-for="goods in dataList">
         <li class="goods-item" data-id="{{goods.id}}">
-          <a href="{{goods.url}}" title="">
-            <img v-bind:src="goods.pic" alt="">
-            <p class="goods-name">{{goods.name}}</p>
-            <span>¥{{goods.price}}</span>
+          <a v-link="{name:'detail', params: { goodsId: goods.id }}"  title="goods.tit">
+            <img v-bind:src="goods.picture" alt="">
+            <p class="goods-name">{{goods.tit}}</p>
+            <span>{{goods.price}}</span> 
           </a>
         </li>
-      </template> -->
+      </template> --><!-- ¥ -->
     </ul>
   </div>
 </template>

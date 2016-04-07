@@ -16,12 +16,7 @@
     route:{
       data:function(transition){
         var that = this;
-        // that.$http({url: '../assets/data_json/index.json', method: 'GET'}).then(function(response){
-        //   console.log(response)
-        // }, function(response){
-        //   console.log(response)
-        // })
-        that.$http.get({url: 'https://jsonp.afeld.me/?url=http://jsonview.com/example.json',}).then(function(response){
+        that.$http.get({url: 'https://jsonp.afeld.me/?url=https://github.com/janmi/vue-website/blob/master/data_json/index.json',}).then(function(response){
           console.log(response)
         }, function(response){
           console.log(response)

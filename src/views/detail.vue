@@ -6,20 +6,23 @@
   <div class="m-detail">
     <div class="goods-pic">
       <img src="http://gw.alicdn.com/imgextra/i4/TB1yaqgKpXXXXbDXVXXXXXXXXXX_!!0-item_pic.jpg_720x720q50s150.jpg" alt="">
+      <template v-for="pic in pics">
+        <img v-bind:src="pic.picture" alt="">
+      </template>
     </div>
     <div class="goods-warp">
       <div class="goods-info">
         <div class="goods-name">
-          <p>一年级大学季张予曦同款中长款毛衣黑色长款开衩高领打底毛衣裙</p>
+          <p>{{name}}</p>
           <span><i class="icon-font icon-share"></i>分享</span>
         </div>
         <div class="goods-price">
-          <i>¥</i> <b>129.00</b> <span>新品大促</span><span>金币抵10%</span>
+          <i>¥</i> <b>{{price}}</b> <span>新品大促</span><span>金币抵10%</span>
         </div>
         <div class="goods-column">
-          <span>快递：10.00</span>
-          <span>月销5213笔</span>
-          <span>广西南宁</span>
+          <span>快递：{{freight}}</span>
+          <span>月销{{sales}}笔</span>
+          <span>{{address}}</span>
         </div>
       </div>
       <div class="detail-column">
@@ -38,7 +41,7 @@
           </span>
         </div>
         <div class="column">
-          <span class="integral"><b>送</b> 66闪电积分</span>
+          <span class="integral"><b>送</b> {{integral}}闪电积分</span>
         </div>
       </div>
 
@@ -52,7 +55,7 @@
       </a>
       <div class="detail-evaluate">
         <p>
-          宝贝评价(100)
+          宝贝评价({{evaluate}})
         </p>
         <div class="evaluate-cont">
           <p class="head">
@@ -85,7 +88,7 @@
       <span class="goods-buy add-cart">加入购物车</span>
       <a href="#" class="goods-buy" title="">立即购买</a>
     </div>
-    <detail-rule v-show="isRule"></detail-rule>
+    <my-rule v-bind:data-rule="ruleArr" v-show="isRule"></my-rule>
   </div>
 </template>
 
@@ -93,12 +96,20 @@
    module.exports = {
     data:function() {
         return {
-            detail:'我是详情页',
-            isRule:false
+          pics: [],
+          price:'129.00',
+          name: "一年级大学季张予曦同款中长款毛衣黑色长款开衩高领打底毛衣裙",
+          sales:5123,
+          freight:10.00,
+          address:"广西南宁",
+          integral:66,
+          evaluate:100,
+          ruleArr:[],
+          isRule:false
         }
     },
     components:{
-      "detailRule":require('../components/detail_rule.vue')
+      "myRule":require('../components/detail_rule.vue')
     }
   }
 </script>

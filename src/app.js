@@ -23,7 +23,7 @@ router.map({
         require(['./views/index.vue'], resolve)
       }
     },
-    '/detail': {
+    '/detail:goodsId': {
       name: 'detail',
       component: function(resolve){  
         require(['./views/detail.vue'], resolve) // 异步加载模块
