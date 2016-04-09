@@ -1,0 +1,110 @@
+{
+  "status": true,
+  "message": "",
+  "cartData": [
+    {
+      "cartId": "57089011680f84675ce80138",
+      "goodsId": "570890113f97fc8e82840f17",
+      "shopName": "试衣间旗舰店",
+      "shopUrl": 0,
+      "index": 0,
+      "tit": "K-SPACE独家自制款韩国半高领百搭破洞毛衣",
+      "picture": "https://asearch.alicdn.com/bao/uploaded/i2/159620188947319028/TB2GVwdlVXXXXXcXpXXXXXXXXXX_!!0-saturn_solar.jpg_250x250.jpg",
+      "url": 0,
+      "price": "1501.54",
+      "number": 1,
+      "rule": "颜色:蓝色;尺码:XXl"
+    },
+    {
+      "cartId": "57089011cb15cf4635bbe619",
+      "goodsId": "5708901154718c9991974470",
+      "shopName": "你懂得旗舰店",
+      "shopUrl": 1,
+      "index": 1,
+      "tit": "ALU ONLINE SHOP独家定制 超推荐款裙摆袖短貂小洋装 超级显瘦！",
+      "picture": "http://placehold.it/640x640",
+      "url": 1,
+      "price": "93.36",
+      "number": 1,
+      "rule": "颜色:蓝色;尺码:XXl"
+    },
+    {
+      "cartId": "57089011c395a18e0ff3ec95",
+      "goodsId": "570890119bfb840f60475ec1",
+      "shopName": "你懂得旗舰店",
+      "shopUrl": 2,
+      "index": 2,
+      "tit": "暴走的萝莉蜜桃臀瑜伽紧身运动裤女速干长裤",
+      "picture": "http://placehold.it/640x640",
+      "url": 2,
+      "price": "2662.42",
+      "number": 1,
+      "rule": "颜色:蓝色;尺码:XXl"
+    },
+    {
+      "cartId": "5708901153f5c66e7dbcc85a",
+      "goodsId": "570890116bd2a29246f40fc5",
+      "shopName": "你大爷旗舰店",
+      "shopUrl": 3,
+      "index": 3,
+      "tit": "ALU ONLINE SHOP独家定制 超推荐款裙摆袖短貂小洋装 超级显瘦！",
+      "picture": "https://img.alicdn.com/bao/uploaded/i3/TB1SYVXHVXXXXaHaXXXXXXXXXXX_!!0-item_pic.jpg_250x250.jpg",
+      "url": 3,
+      "price": "259.45",
+      "number": 1,
+      "rule": "颜色:黄色;尺码:S"
+    },
+    {
+      "cartId": "570890113b7655e63db9578a",
+      "goodsId": "5708901143b7f9af56cf73ae",
+      "shopName": "你懂得旗舰店",
+      "shopUrl": 4,
+      "index": 4,
+      "tit": "K-SPACE独家自制款韩国半高领百搭破洞毛衣",
+      "picture": "https://img.alicdn.com/bao/uploaded/i2/TB1ggC1KVXXXXa8XVXXXXXXXXXX_!!0-item_pic.jpg_250x250.jpg",
+      "url": 4,
+      "price": "2210.30",
+      "number": 1,
+      "rule": "颜色:白色;尺码:L"
+    },
+    {
+      "cartId": "57089011788ffe01d4103d90",
+      "goodsId": "5708901195f95a904d71bbf1",
+      "shopName": "试衣间旗舰店",
+      "shopUrl": 5,
+      "index": 5,
+      "tit": "K-SPACE独家自制款韩国半高领百搭破洞毛衣",
+      "picture": "https://img.alicdn.com/bao/uploaded/i4/TB1YGjiKVXXXXXmXVXXXXXXXXXX_!!0-item_pic.jpg_250x250.jpg",
+      "url": 5,
+      "price": "1604.97",
+      "number": 1,
+      "rule": "颜色:黄色;尺码:S"
+    },
+    {
+      "cartId": "5708901150b817bc6d1621ee",
+      "goodsId": "5708901122243416b56ac16c",
+      "shopName": "毛爷爷旗舰店",
+      "shopUrl": 6,
+      "index": 6,
+      "tit": "ALU ONLINE SHOP独家定制 超推荐款裙摆袖短貂小洋装 超级显瘦！",
+      "picture": "https://asearch.alicdn.com/bao/uploaded/i2/159620188947319028/TB2GVwdlVXXXXXcXpXXXXXXXXXX_!!0-saturn_solar.jpg_250x250.jpg",
+      "url": 6,
+      "price": "2402.09",
+      "number": 1,
+      "rule": "颜色:黑色;尺码:M"
+    },
+    {
+      "cartId": "57089011780d18ce1b0bef3e",
+      "goodsId": "57089011a7e3cb00dc930404",
+      "shopName": "你大爷旗舰店",
+      "shopUrl": 7,
+      "index": 7,
+      "tit": "K-SPACE独家自制款韩国半高领百搭破洞毛衣",
+      "picture": "https://asearch.alicdn.com/bao/uploaded/i1/159620188911188602/TB2NAbPlVXXXXbIXpXXXXXXXXXX_!!0-saturn_solar.jpg_250x250.jpg",
+      "url": 7,
+      "price": "2889.23",
+      "number": 1,
+      "rule": "颜色:绿色;尺码:XL"
+    }
+  ]
+}

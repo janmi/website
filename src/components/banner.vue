@@ -42,21 +42,15 @@
   <div class="m-banner">
     <div id='slider' class='swipe'>
       <div class='swipe-wrap'>
-        <div class="swipe-wrap-item"><a href="#" title=""><img src="https://img.alicdn.com/tps/TB1mbxTMXXXXXcHXVXXXXXXXXXX-1125-352.jpg_q50.jpg" alt=""></a></div>
-        <div class="swipe-wrap-item"><a href="#" title=""><img src="https://img.alicdn.com/tps/TB11xOiMXXXXXc4aXXXXXXXXXXX-1125-352.jpg_q50.jpg" alt=""></a></div>
-        <div class="swipe-wrap-item"><a href="#" title=""><img src="https://gw.alicdn.com/tps/i1/TB1cOFVMXXXXXcbXFXXdIns_XXX-1125-352.jpg_q50.jpg" alt=""></a></div>
-        <!-- <template v-for="banner in dataBanner">
+        <template v-for="banner in dataBanner">
           <div class="swipe-wrap-item"><a v-link="{name:'detail', params: { goodsId: banner.id }}" title=""><img v-bind:src="banner.picture" alt="{{banner.tit}}"></a></div>
-        </template> -->
+        </template>
       </div>
     </div>
     <div class="swipe-tab">
-      <!-- <template v-for="banner in dataBanner">
-        <span v-bind:class="{'cur': isTab == index }"></span>
-      </template> -->
-      <span v-bind:class="{'cur': isTab == 0 }"></span>
-      <span v-bind:class="{'cur': isTab == 1 }"></span>
-      <span v-bind:class="{'cur': isTab == 2 }"></span>
+      <template v-for="banner in dataBanner">
+        <span v-bind:class="{'cur': isTab == $index }"></span>
+      </template>
     </div>
   </div>
 </template>
@@ -83,7 +77,7 @@
           that.$data.isTab = index;
         }
       });
-      //mySwipe.stop() ÂÅúÊ≠¢ÊñπÊ≥ï
+      //mySwipe.stop() Õ£÷π∑Ω∑®
     }
   }
 
