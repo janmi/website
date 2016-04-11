@@ -15,6 +15,9 @@
 .cart-goods-item {
   margin-bottom: 0.266667rem;
   border-bottom: 1px solid #ddd;
+  .item-head .icon-areaGou, .item-cont .icon-areaGou{
+    color: #ff5000;
+  }
 }
 .item-head {
   display: flex;
@@ -25,8 +28,10 @@
   line-height: 1.2rem;
   background-color: #fff;
   color: #333;
-
-  .icon-area {
+  input{
+    display:none;
+  }
+  .icon-font{
     height: 1.2rem;
     padding: 0 0.266667rem;
     color: #9fa3b6;
@@ -58,8 +63,10 @@
   min-height: 2.453333rem;
   background-color: #f8f8f8;
   overflow: hidden;
-
-  .icon-area {
+  input{
+    display:none;
+  }
+  .icon-font {
     float: left;
     line-height: 2.453333rem;
     padding: 0 0.266667rem;
@@ -207,6 +214,9 @@
         color: #ff5000;
       }
     }
+  }
+  .check-cur{
+    color: #ff5000;
   }
   p {
     flex: 1;

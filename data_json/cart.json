@@ -13,7 +13,8 @@
       "url": 0,
       "price": "1501.54",
       "number": 1,
-      "rule": "颜色:蓝色;尺码:XXl"
+      "rule": "颜色:蓝色;尺码:XXl",
+      "isSelect": false
     },
     {
       "cartId": "57089011cb15cf4635bbe619",
@@ -26,7 +27,8 @@
       "url": 1,
       "price": "93.36",
       "number": 1,
-      "rule": "颜色:蓝色;尺码:XXl"
+      "rule": "颜色:蓝色;尺码:XXl",
+      "isSelect": false
     },
     {
       "cartId": "57089011c395a18e0ff3ec95",
@@ -39,7 +41,8 @@
       "url": 2,
       "price": "2662.42",
       "number": 1,
-      "rule": "颜色:蓝色;尺码:XXl"
+      "rule": "颜色:蓝色;尺码:XXl",
+      "isSelect": false
     },
     {
       "cartId": "5708901153f5c66e7dbcc85a",
@@ -52,7 +55,8 @@
       "url": 3,
       "price": "259.45",
       "number": 1,
-      "rule": "颜色:黄色;尺码:S"
+      "rule": "颜色:黄色;尺码:S",
+      "isSelect": false
     },
     {
       "cartId": "570890113b7655e63db9578a",
@@ -65,7 +69,8 @@
       "url": 4,
       "price": "2210.30",
       "number": 1,
-      "rule": "颜色:白色;尺码:L"
+      "rule": "颜色:白色;尺码:L",
+      "isSelect": false
     },
     {
       "cartId": "57089011788ffe01d4103d90",
@@ -78,7 +83,8 @@
       "url": 5,
       "price": "1604.97",
       "number": 1,
-      "rule": "颜色:黄色;尺码:S"
+      "rule": "颜色:黄色;尺码:S",
+      "isSelect": false
     },
     {
       "cartId": "5708901150b817bc6d1621ee",
@@ -91,7 +97,8 @@
       "url": 6,
       "price": "2402.09",
       "number": 1,
-      "rule": "颜色:黑色;尺码:M"
+      "rule": "颜色:黑色;尺码:M",
+      "isSelect": false
     },
     {
       "cartId": "57089011780d18ce1b0bef3e",
@@ -104,7 +111,8 @@
       "url": 7,
       "price": "2889.23",
       "number": 1,
-      "rule": "颜色:绿色;尺码:XL"
+      "rule": "颜色:绿色;尺码:XL",
+      "isSelect": false
     }
   ]
 }

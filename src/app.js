@@ -8,7 +8,7 @@ Vue.use(resource);
 Vue.http.options.root = 'http://192.168.10.22/website/'; //配置根目录
 Vue.http.options.emulateJSON = true;
 
-
+window.vue = Vue
 var app = Vue.extend(index)
 
 var router = new router({
