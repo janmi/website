@@ -120,7 +120,7 @@
         <p class="price">¥129.00</p>
         <p>库存100</p>
         <p>请选择颜色分类</p>
-        <span class="rule-close">
+        <span class="rule-close" v-on:click="closeRule()">
           <i class="icon-font icon-del"></i>
         </span>
       </div>
@@ -154,6 +154,13 @@
  
 <script>
   module.exports = {
-    porp:['dataRule']
+    porp:['dataRule'],
+    methods:{
+      closeRule:function(){
+        var that = this;
+        that.$parent.$data.isRule = false;
+        window.router.app.isShow = true;
+      }
+    }
   }
 </script>
