@@ -56,6 +56,7 @@ router.beforeEach(function(transition){
     }else{
         router.app.isShow = true;
     }
+    //document.body.className = "loading";
     transition.next()
 })
 
@@ -65,5 +66,6 @@ router.start(app, "app");
 
 //注册路由切换后
 router.afterEach(function (transition) {
+    //document.body.className = "";
     console.log('成功浏览到: ' + transition.to.path)
 })

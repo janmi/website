@@ -52,9 +52,9 @@
     <div class="cart-total">
       <div class="total-cont">
         <label for="checkbox" v-on:click="total()">
-          <input type="checkbox" v-model="all" id="checkbox" />
-          <span class="check-all" v-bind:class="{'check-all-cur': all}"><i class="icon-font" v-bind:class="{'icon-areaGou': all, 'icon-area': !all}"></i> 全选</span>
+          <span class="check-all" v-bind:class="{'check-all-cur': all}"><i class="icon-font icon-area" v-bind:class="{'icon-areaGou': all}"></i> 全选</span>
         </label>
+        <input type="checkbox" v-model="all" id="checkbox" />
         <p> 合计: <span>¥{{totalPrice}}</span> <span>不含运费</span></p>
         <span class="pay">结算(<i>{{totalnumber}}</i>)</span>
       </div>
@@ -72,23 +72,20 @@
         rule:[],
         totalPrice:"0.00",
         totalnumber:"0",
-        all:'',
+        all:false,
         isRule:false
       }
     },
     route:{
       data:function(transition){
         var that = this;
-        var data = require('../../data_json/cart.json');
         
-        data.cartData.forEach(function(item, index){
-          item.index = 'item'+item.index;
-        })
-
-        that.$data.carts = data.cartData;
-        that.$http.get({url: 'https://jsonp.afeld.me/?url=https://github.com/janmi/vue-website/blob/master/data_json/index.json',}).then(function(response){
-          console.log(response);
+        that.$http.get({url: 'https://jsonp.afeld.me/?url=http://www.ydcss.com/json/cart.json',}).then(function(response){
+          response.data.cartData.forEach(function(item, index){
+            item.index = 'item'+item.index;
+          })
           that.$data.carts = response.data.cartData;
+          console.log('请求成功');
         }, function(response){
           console.log('请求失败，请稍后再试')
         })
@@ -101,8 +98,8 @@
         var newData = that.$data.carts; 
         var numbers = newData.length;
         var prices = 0;
-
-        if (!that.$data.all) {
+        console.log(that.$data.all)
+        if (that.$data.all) {
           newData.forEach(function(item, index){
             prices += parseFloat(item.price);
             item.isSelect = true;

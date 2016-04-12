@@ -28,6 +28,7 @@
       display:inline-block;
       width:0.24rem;
       height:0.24rem;
+      margin-right: 0.066667rem;
       border-radius: 50%;
       background-color: rgba(248,248,248,.8);
       border:0.026667rem solid #d9d9d9;

@@ -38,6 +38,7 @@
     .px2px(font-size, 36);
   }
   .shop-link {
+    display:block;
     height: 1.2rem;
     flex: 1;
     color: #333;
@@ -99,6 +100,7 @@
     margin-bottom: 0.133333rem;
     line-height: 1.2;
     color: #3d4245;
+    .elps-wrap();
   }
   .rule {
     color: #9c9c9c;
@@ -200,14 +202,13 @@
   color: #333;
   .px2px(font-size, 28);
   input{
-    visibility: hidden;
+    display:none;
   }
   .check-all {
-    padding: 0 0.32rem;
-
+    padding: 0 0.266667rem 0;
     i {
       color: #9fa3b6;
-      .px2px(font-size, 32);
+      .px2px(font-size, 36);
     }
     &-cur {
       i {
@@ -220,19 +221,24 @@
   }
   p {
     flex: 1;
+    padding-right:0.2rem;
+    box-sizing: border-box;
     text-align: right;
-
+  
     span {
       color: #ff5000;
       margin-right: 0.2rem;
       &:last-child {
-        .px2px(font-size, 24);
+        margin-right: 0;
+        .px2px(font-size, 20);
         color: #333;
       }
     }
+
   }
   .pay {
-    width: 2.773333rem;
+    display:inline-block;
+    width: 2.666667rem;
     height: 1.24rem;
     line-height: 1.24rem;
     text-align: center;

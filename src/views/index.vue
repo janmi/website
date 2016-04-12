@@ -15,18 +15,14 @@
     },
     route:{
       data:function(transition){
-        var data = require('../../data_json/index.json'); 
-        console.log(data);
         var that = this;
-        that.$http.get({url: 'https://jsonp.afeld.me/?url=https://github.com/janmi/vue-website/blob/master/data_json/index.json',}).then(function(response){
+        that.$http.get({url: 'https://jsonp.afeld.me/?url=http://www.ydcss.com/json/index.json',}).then(function(response){
           that.$data.banners = response.data.bannerData;
           that.$data.goods = response.data.goodsData;
           console.log('请求成功！')
         }, function(response){
           console.log('请求失败，请稍后再试')
         })
-        that.$data.banners = data.bannerData;
-        that.$data.goods = data.goodsData;
       }
     },
     components:{
