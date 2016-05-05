@@ -1,42 +1,5 @@
 <style lang="less">
-  .m-banner{
-    position: relative;
-    height:3.066667rem;
-    img{
-      width:100%;
-    }
-  }
-  .swipe {
-    overflow: hidden;
-    visibility: hidden;
-    position: relative;
-  }
-  .swipe-wrap {
-    overflow: hidden;
-    position: relative;
-  }
-  .swipe-wrap > div {
-    float:left;
-    width:100%;
-    position: relative;
-  }
-  .swipe-tab{
-    position: absolute;
-    right:0.4rem;
-    bottom:0.066667rem;
-    span{
-      display:inline-block;
-      width:0.24rem;
-      height:0.24rem;
-      margin-right: 0.066667rem;
-      border-radius: 50%;
-      background-color: rgba(248,248,248,.8);
-      border:0.026667rem solid #d9d9d9;
-    }
-    .cur{
-      background-color: #ff5000;
-    }
-  }
+  @import url(../assets/less/banner.less);
 </style>
 
 <template>
@@ -67,17 +30,19 @@
     },
     ready:function(){
       var that = this;
-      var mySwipe = new swipe(document.getElementById('slider'), {
-        startSlide: 0,
-        speed: 500,
-        auto: 3000,
-        continuous: true,
-        disableScroll: false,
-        stopPropagation: false,
-        callback: function(index, elem) {
-          that.$data.isTab = index;
-        }
-      });
+      setTimeout(function(){
+        var mySwipe = new swipe(document.getElementById('slider'), {
+          startSlide: 0,
+          speed: 500,
+          auto: 3000,
+          continuous: true,
+          disableScroll: false,
+          stopPropagation: false,
+          callback: function(index, elem) {
+            that.$data.isTab = index;
+          }
+        });
+      },1000)
       //mySwipe.stop() Í£Ö¹·½·¨
     }
   }

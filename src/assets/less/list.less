@@ -1,0 +1,37 @@
+@import './module.less';
+
+.goods {
+  width: 100%;
+  overflow: hidden;
+
+  .goods-item {
+    float: left;
+    width: 49.5%;
+    margin-bottom: 0.133333rem;
+    padding-bottom: 0.266667rem;
+    background-color: #fff;
+    .px2px(font-size, 28);
+
+    &:nth-child(even) {
+      margin-left: 1%;
+    }
+    img {
+      display: block;
+      width: 100%;
+      min-height: 4.933333rem;
+    }
+    .goods-name {
+      padding: 0.133333rem 0.2rem;
+      height: 1.0rem;
+      line-height: 0.55rem;
+      color: rgb(102, 102, 102);
+      word-break: break-all;
+      .elps-wrap();
+    }
+    span {
+      display: inline-block;
+      padding: 0.066667rem 0.2rem;
+      color: rgb(255, 80, 0);
+    }
+  }
+}

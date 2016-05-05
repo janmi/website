@@ -10,7 +10,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var SOURCE_MAP = true;
 // process.env.NODE_ENV = "dev";
 var debug = process.env.NODE_ENV !== 'production';
-var CDN = 'http://cdn.site.com/'; //配置静态文件域名
+var CDN = '/dist/static/'; //配置静态文件域名
 
 module.exports = merge(baseConfig, {
   devtool: SOURCE_MAP ? '#source-map' : false,

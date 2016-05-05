@@ -86,7 +86,7 @@
         店铺
       </a>
       <span class="goods-buy add-cart">加入购物车</span>
-      <a href="#" class="goods-buy" title="">立即购买</a>
+      <a href="javascript:;" class="goods-buy" v-on:click="setRule()" title="">立即购买</a>
     </div>
     <my-rule v-bind:data-rule="ruleArr" v-show="isRule"></my-rule>
   </div>
@@ -107,6 +107,12 @@
           ruleArr:[],
           isRule:false
         }
+    },
+    methods:{
+      setRule:function(){
+        var that = this;
+        that.$data.isRule = true;
+      }
     },
     components:{
       "myRule":require('../components/detail_rule.vue')

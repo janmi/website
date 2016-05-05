@@ -1,0 +1,193 @@
+@import './module.less';
+
+.type-nav {
+  padding: 0.333333rem 0.333333rem 0;
+  margin-bottom: 0.133333rem;
+  // display: flex;
+  // flex-flow: row wrap;
+  //放不下自动换行, 部分安卓机尚不支持
+  background-color: #fff;
+  overflow: hidden;
+
+  .nav-item {
+    float: left;
+    display: block;
+    width: 20%;
+    margin-bottom: 0.333333rem;
+    text-align: center;
+    color: #5f646e;
+    .px2px(font-size, 24);
+
+    span {
+      display: block;
+      margin: 0 auto 0.133333rem;
+      width: 1.173333rem;
+      height: 1.173333rem;
+      line-height: 1.173333rem;
+      border-radius: 50%;
+      background-color: #f2f2f2;
+      color: #ff5000;
+      .px2px(font-size, 52);
+    }
+  }
+}
+.user-head {
+  height: 2.0rem;
+  background-color: #ff5000;
+  .px2px(font-size, 32);
+
+  a {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2rem;
+    padding-left: 0.2rem;
+    color: #fff;
+  }
+  .user-name {
+    display: block;
+    flex: 1;
+  }
+  span:last-child {
+    display: block;
+    position: relative;
+    width: 1.55rem;
+    height: 0.666667rem;
+    line-height: 0.666667rem;
+    background-color: #e54800;
+    z-index: 10;
+    text-align: center;
+    text-indent: -0.053333rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -0.265333rem;
+      width: 0.666667rem;
+      height: 0.666667rem;
+      border-top-left-radius: 100%;
+      border-bottom-left-radius: 100%;
+      background-color: #e54800;
+      z-index: -1;
+    }
+  }
+  .user-pic {
+    display: block;
+    margin-right: 0.2rem;
+    width: 1.333333rem;
+    height: 1.333333rem;
+    border-radius: 50%;
+    border: 0.026667rem solid #fff;
+  }
+}
+.user-nav {
+  width: 100%;
+  margin-top: 0.266667rem;
+  background-color: #fff;
+  border-bottom: 0.026667rem solid #e7e7e7;
+}
+.order-all {
+  padding: 0.333333rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e7e7e7;
+  .px2px(font-size, 32);
+  color: #595e60;
+
+  .tit {
+    display: block;
+    flex: 1;
+  }
+  span:last-child {
+    color: #adadad;
+    .px2px(font-size, 24);
+  }
+}
+.user-nav-cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0;
+  text-align: center;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #d9d9d9;
+  }
+  a {
+    position: relative;
+    display: block;
+    flex: 1;
+    color: #051b28;
+    .px2px(font-size, 28);
+
+    span {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: -0.133333rem;
+      .px2px(font-size, 44);
+      color: #999;
+    }
+    i {
+      position: absolute;
+      top: .035rem;
+      left: 50%;
+      margin-left: .14rem;
+      padding: 0.04rem;
+      width: 0.42rem;
+      height: 0.42rem;
+      line-height: .42rem;
+      border: 0.026667rem solid #ff5000;
+      background-color: #ff5000;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      .px2px(font-size, 24);
+      font-style: normal;
+    }
+  }
+}
+.user-grid-nav {
+  width: 100%;
+  margin-top: 0.266667rem;
+  border-bottom: 0.026667rem solid #e7e7e7;
+  background-color: #fff;
+  overflow: hidden;
+
+  a {
+    position: relative;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    // 如果采用 flex 布局，元素的宽不是固定值(如：2rem、100px)，采用的是百分比的度量单位，则元素设置的 border 为1px时需要转换为 对应的 rem 度量单位，不然在 IOS 手机上有可能会出现有一部分的元素的 border 是粗的，一部分是细的。 
+    height: 2.626667rem;
+    .px2px(font-size, 28);
+    color: #051b28;
+    box-sizing: border-box;
+    border-bottom: 0.0133333rem solid #e7e7e7;
+    border-right: 0.0133333rem solid #e7e7e7;
+
+    span {
+      display: block;
+      width: 100%;
+      .px2px(font-size, 60);
+      color: #ff5000;
+      text-align: center;
+    }
+  }
+}
+[data-dpr="1"] .user-grid-nav a {
+  border-bottom: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+}

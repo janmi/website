@@ -4,7 +4,8 @@
 
 <template>
   <div class="m-cart">
-    <div class="cart-list">
+    <div class="icon-loading" v-if="$loadingRouteData"></div>
+    <div v-if="!$loadingRouteData" class="cart-list">
       <template v-for="cart in carts">
         <div class="cart-goods-item" data-id="{{cart.index}}">
           <div class="item-head">
@@ -61,11 +62,28 @@
     </div>
     <my-rule v-bind:data-rule="rule" v-show="isRule"></my-rule>
   </div>
-
 </template>
 
 <script>
   module.exports = {
+    route:{
+      data:function(transition){
+        var that = this;
+        that.$http.get({url: 'https://jsonp.afeld.me/?url=http://www.ydcss.com/json/cart.json',}).then(function(response){
+          response.data.cartData.forEach(function(item, index){
+            item.index = 'item'+item.index;
+            item.isEidt = false;
+          })
+          transition.next({
+            carts:response.data.cartData
+          })
+          console.log('请求成功');
+        }, function(response){
+          console.log('请求失败，请稍后再试')
+        })
+        
+      }
+    },
     data:function(){
       return {
         carts:[],
@@ -74,23 +92,6 @@
         totalnumber:"0",
         all:false,
         isRule:false
-      }
-    },
-    route:{
-      data:function(transition){
-        var that = this;
-        
-        that.$http.get({url: 'https://jsonp.afeld.me/?url=http://www.ydcss.com/json/cart.json',}).then(function(response){
-          response.data.cartData.forEach(function(item, index){
-            item.index = 'item'+item.index;
-            item.isEidt = false;
-          })
-          that.$data.carts = response.data.cartData;
-          console.log('请求成功');
-        }, function(response){
-          console.log('请求失败，请稍后再试')
-        })
-        
       }
     },
     methods:{
@@ -161,10 +162,11 @@
        */
       eidtItem:function(index){
         var that = this;
-        if (that.$data.carts[index].isEidt === false) {
-          that.$data.carts[index].isEidt = true;
+        var eidt = that.$data.carts[index];
+        if ( eidt.isEidt === false) {
+          eidt.isEidt = true;
         }else{
-          that.$data.carts[index].isEidt = false;
+          eidt.isEidt = false;
         }
       },
       /*
@@ -173,7 +175,6 @@
       eidtRule:function(id){
         var that = this;
         that.$data.isRule = true;
-        window.router.app.isShow = false;
       },
       /*
         删除项
