@@ -84,7 +84,7 @@
         <span class="icon-font icon-user"></span>
         用户中心
       </a>
-    </div>
+    </div> 
   </div>
 </template>
 
