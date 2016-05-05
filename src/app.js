@@ -44,7 +44,7 @@ router.map({
   
 //默认/重定向到user页
 router.redirect({
-    '/':"/user"
+    '/':"/index"
 })
 
 //注册路由切换前

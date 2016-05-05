@@ -3,6 +3,7 @@
     <my-type></my-type>
     <div class="icon-loading" v-if="$loadingRouteData"></div>
     <my-list v-if="!$loadingRouteData" v-bind:data-list="goods"></my-list>
+    <my-qrcode></my-qrcode>
 </template>
 
 <script>
@@ -46,7 +47,8 @@
     components:{
       "myBanner": require('../components/banner.vue'),
       "myType": require('../components/type_nav.vue'),
-      "myList": require('../components/list.vue')
+      "myList": require('../components/list.vue'),
+      "myQrcode": require('../components/qrcode.vue')
     }
   }
 </script>
