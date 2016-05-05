@@ -10,14 +10,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var SOURCE_MAP = true;
 // process.env.NODE_ENV = "dev";
 var debug = process.env.NODE_ENV !== 'production';
-var CDN = '/dist/static/'; //配置静态文件域名
+var CDN = 'static/'; //配置静态文件域名
 
 module.exports = merge(baseConfig, {
   devtool: SOURCE_MAP ? '#source-map' : false,
   output: {
     // naming output files with hashes for better caching.
     // dist/index.html will be auto-generated with correct URLs.
-    publicPath: debug ? '../dist/static/' : CDN, 
+    publicPath: debug ? 'static/' : CDN, 
     filename: 'js/[name].[chunkhash].js',
     chunkFilename: 'js/[id].[chunkhash].js'
   },
