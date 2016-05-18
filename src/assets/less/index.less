@@ -191,3 +191,27 @@
   border-bottom: 1px solid #e7e7e7;
   border-right: 1px solid #e7e7e7;
 }
+
+.qrcode-box{
+  position: fixed;
+  right:1rem;
+  bottom:2rem;
+  width: 2.666667rem;
+  height: 3.0rem;
+  border:1px solid #eee;
+  box-sizing: border-box;
+  padding: 0.133333rem 0.2rem 0.2rem; 
+  color: #ff5000;
+  background-color: #fff;
+  .px2px(font-size, 28);
+  text-align: center;
+  &-cur{
+    display:none;
+  }
+  .qrcode{
+    width: 2.266667rem;
+    img{
+      width: 100%;
+    }
+  } 
+}
