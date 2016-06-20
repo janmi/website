@@ -31,7 +31,7 @@
               <div class="goods-eidt" v-if="cart.isEidt">
                 <p class="number">
                   <span class="icon-font icon-cut"></span>
-                  <input type="text" value="{{cart.number}}" />
+                  <input type="text" v-on:focus="scrollItem()" value="{{cart.number}}" />
                   <span class="icon-font icon-plus"></span>
                 </p>
                 <p class="rule-eidt" v-on:click="eidtRule()">
@@ -185,6 +185,14 @@
           that.$data.carts.splice(index, 1);
           status === true ? that.totalItem() : '';
         }
+      },
+      /*
+        输入框滚动到顶部
+       */
+      scrollItem:function(event){
+        console.log(event);
+        var el = document.activeElement;
+        el.scrollIntoView();
       }
     },
     components:{

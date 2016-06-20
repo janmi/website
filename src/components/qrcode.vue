@@ -1,5 +1,5 @@
 <template>
-  <div class="qrcode-box">
+  <div class="qrcode-box" v-if='isShow'>
     <p>手机访问</p>
     <div class="qrcode">
       <img src="../assets/img/qrcode.png" alt="" />
@@ -8,10 +8,22 @@
 </template>
 
 <script>
-  window.onload = function(){
-    if (window.navigator.appVersion.match(/android/gi) || window.navigator.appVersion.match(/iphone/gi)) {
-        document.querySelector('.qrcode-box').className += ' qrcode-box-cur'
+  module.exports = {
+    data:function(){
+      return {
+        isShow:true
+      }
+    },
+    ready:function(){
+      this.show();
+    },
+    methods:{
+      show:function(){
+        var that = this;
+        if (window.navigator.appVersion.match(/android/gi) || window.navigator.appVersion.match(/iphone/gi)) {
+          that.$data.isShow = false
+        }
+      }
     }
   }
-
 </script>
